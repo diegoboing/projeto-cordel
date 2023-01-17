@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+/*Zerando todas as margens da página.*/
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html, body {
+    min-height: 100vh;/*amanho mínimo da altura, se fosse vw seria da largura*/
+    background-color: darkgray;
+}
+header {
+   background-color: black; 
+   color: white;
+   text-align: center;
+}
+header > h1 {/*Nome do projeto - Cordel Moderno*/
+    padding: 50px;
+    /*text-transform: uppercase; Letra toda maiúscula*/
+    font-variant: small-caps;/*Faz com que as letras maiusculas sejam maiore.*/
+}
+header > p { /*Parágrafo onde está o nome do autor.*/
+    padding-bottom: 50px; /*No parágrafo do título da página, fica 50px pra cima e 50px pra baixo. Em Cordel Moderno, fica com o mesmo espaço na parte superior e inferior.*/
+}
+header a, footer a { /*Confguração dos links - Dessa forma fica melhor se for colocar links no conteúdo*/
+    color: white;
+    text-decoration: none;/*Tirar sublinhado do link*/
+    font-weight: bolder;
+    font-weight: bolder; /*Caracterizar o link, ficar em negrito*/
+}
+header a:hover, footer a:hover { /*Dessa forma fica melhor se for colocar links no conteúdo*/
+    text-decoration: underline;
+}
+
+section {/*Configuração para todo o section - aqui será dado espaço para ser possivel criar o efeito PARALAX*/
+
+    /*A configuração abaixo servirá pra aparecer um ou outro na tela de cada texto - e também se adapta sozinho*/
+    padding-top: 10vh;/*Padding de 10% da altura*/
+    padding-bottom: 10vh;/*Padding de 10% de baixo*/
+    line-height: 2em;/*Espaçamento do texto*/
+    padding-left: 30px;/*Espaçamento da esquerda para direita. Para afastar da borda da página.*/
+
+}
+
+section.normal {/*Class normal - essa classe não será aplicada imagem*/
+    background-color: white;
+    color: black;
+}
+
+section.imagem {/*Class - essa class será adicionada imagem*/
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+section.imagem > p {/*Seção para não chocar o texto na hora da imagem.*/
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.288);
+}
+
+footer {/*Configuração do rodapé*/
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 10px; /*Espaço em volta do texto.*/
+}
