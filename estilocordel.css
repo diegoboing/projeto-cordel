@@ -81,7 +81,7 @@ section.imagem {/*Class - essa class será adicionada imagem*/
     background-color: rgb(51, 51, 51);
     color: white;
     box-shadow: inset 8px 8px 16px 0 rgba(0, 0, 0, 0.671);/*Sombra inset(pra dentro) horizontal, vertical, espalhamento e cor. Ajuste da sombra da imagem*/
-    background-attachment: fixed;/*Fixa a imagem e não move quando movimenta a barra de rolagem vertical. Efeito Parallax*/
+    background-attachment: fixed;/* Fixa a imagem e não move quando movimenta a barra de rolagem vertical. Efeito Parallax*/
 }
 
 section.imagem > p {/*Seção para não chocar o texto na hora da imagem.*/
@@ -90,19 +90,19 @@ section.imagem > p {/*Seção para não chocar o texto na hora da imagem.*/
     background-color: rgba(0, 0, 0, 0.411);/*Fundo do texto, para não chocar com a imagem de fundo*/
     padding: 5px;
     text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);/*Sombra deslocamento lateral e vertical, espalhamento e cor da sombra*/
-    background-size: cover;/*Esse código foi adicionado aqui pois são iguais para as duas section#img01 e 02. Padrão para as duas.*/
+    background-size: cover;/* Ajusta a imagem na página automaticamente. - Esse código foi adicionado aqui pois são iguais para as duas section#img01 e 02. Padrão para as duas.*/
     
 }
 
 section#img01 {
     background-image: url('imagens/background001.jpg');/*adicionar imagem*/
     background-position: right center;/*Posição da imagem, lado direito - centro.*/
-    /*background-size: cover; - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img02 e pra esta section#img01*/
+    /*background-size: cover; - Ajusta a imagem na página automaticamente. - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img02 e pra esta section#img01*/
 }
 
 section#img02 {
     background-image: url('imagens/background002.jpg');/*adicionar imagem*/
-    /*background-size: cover; - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img01 e pra esta section#img02*/
+    /*background-size: cover; - Ajusta a imagem na página automaticamente. - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img01 e pra esta section#img02*/
 }
 
 footer {/*Configuração do rodapé*/
