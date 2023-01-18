@@ -1,13 +1,35 @@
 @charset "UTF-8";
+/*Procedimento para importar fontes do google:
+- Fonts.Google > selecionar a fonte > Select a fonte > copiar o link da CSS e o font-family > declarar na CSS no VSG.
+- Criar fonte padrão com o :root e criar as variáveis para chamar as fontes.
+- Ver :root nesse estilo...
+- font-family: var(--fonte1); - Código pra chamar a fonte, ex no body*/
+
+/*Link da fonte importada no Fonts.Google.*/
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+/*Link da fonte importada no Fonts.Google.*/
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+
+/*Configurar no ROOT (principal) as fontes utilizadas geral*/
+:root {
+    --fonte1: Verdana, Geneva, Tahoma, sans-serif;/*Fonte padrão - Será usada no cabeçalho, rodapé, etc...*/
+    --fonte2: 'Passion One', cursive;/*Fonte Passion One importada do Fonts.Google - Será usada nos títulos*/
+    --fonte3: 'Sriracha', cursive;/*Fonte Sriracha importada do Fonts.Google - Será usada para o conteúdo.*/
+}
 
 /*Zerando todas as margens da página.*/
 * {
     margin: 0px;
     padding: 0px;
+    font-size: 1em;
 }
+
 html, body {
     min-height: 100vh;/*amanho mínimo da altura, se fosse vw seria da largura*/
     background-color: darkgray;
+    font-family: var(--fonte1);
 }
 header {
    background-color: black; 
@@ -17,7 +39,9 @@ header {
 header > h1 {/*Nome do projeto - Cordel Moderno*/
     padding: 50px;
     /*text-transform: uppercase; Letra toda maiúscula*/
-    font-variant: small-caps;/*Faz com que as letras maiusculas sejam maiore.*/
+    font-variant: small-caps;/*Faz com que as letras maiusculas sejam maiores.*/
+    font-family: var(--fonte2);
+    font-size: 10vh;/*Configura a letra conforme o tamanho do navegador - se a página for grande aumenta a letra, se for pequeno, diminui. É um recurso, mas não é a melhor maneira.*/
 }
 header > p { /*Parágrafo onde está o nome do autor.*/
     padding-bottom: 50px; /*No parágrafo do título da página, fica 50px pra cima e 50px pra baixo. Em Cordel Moderno, fica com o mesmo espaço na parte superior e inferior.*/
@@ -39,7 +63,13 @@ section {/*Configuração para todo o section - aqui será dado espaço para ser
     padding-bottom: 10vh;/*Padding de 10% de baixo*/
     line-height: 2em;/*Espaçamento do texto*/
     padding-left: 30px;/*Espaçamento da esquerda para direita. Para afastar da borda da página.*/
+    font-family: var(--fonte3);
+    font-size: 3.5vh;
 
+}
+
+section > p {
+    padding-bottom: 2em;/*Espaço entre um parágrafo e outro.*/
 }
 
 section.normal {/*Class normal - essa classe não será aplicada imagem*/
@@ -50,11 +80,29 @@ section.normal {/*Class normal - essa classe não será aplicada imagem*/
 section.imagem {/*Class - essa class será adicionada imagem*/
     background-color: rgb(51, 51, 51);
     color: white;
+    box-shadow: inset 8px 8px 16px 0 rgba(0, 0, 0, 0.671);/*Sombra inset(pra dentro) horizontal, vertical, espalhamento e cor. Ajuste da sombra da imagem*/
+    background-attachment: fixed;/* Fixa a imagem e não move quando movimenta a barra de rolagem vertical. Efeito Parallax*/
 }
 
 section.imagem > p {/*Seção para não chocar o texto na hora da imagem.*/
-    width: 500px;
-    background-color: rgba(0, 0, 0, 0.288);
+    /*width: 500px;*/
+    display: inline-block; /*Caixa se adapta ao tamanho do conteúdo*/
+    background-color: rgba(0, 0, 0, 0.411);/*Fundo do texto, para não chocar com a imagem de fundo*/
+    padding: 5px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.425);/*Sombra deslocamento lateral e vertical, espalhamento e cor da sombra*/
+    background-size: cover;/* Ajusta a imagem na página automaticamente. - Esse código foi adicionado aqui pois são iguais para as duas section#img01 e 02. Padrão para as duas.*/
+    
+}
+
+section#img01 {
+    background-image: url('imagens/background001.jpg');/*adicionar imagem*/
+    background-position: right center;/*Posição da imagem, lado direito - centro.*/
+    /*background-size: cover; - Ajusta a imagem na página automaticamente. - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img02 e pra esta section#img01*/
+}
+
+section#img02 {
+    background-image: url('imagens/background002.jpg');/*adicionar imagem*/
+    /*background-size: cover; - Ajusta a imagem na página automaticamente. - Essa linha foi colocada no padrão, section.imagem, desta forma serve para section#img01 e pra esta section#img02*/
 }
 
 footer {/*Configuração do rodapé*/
